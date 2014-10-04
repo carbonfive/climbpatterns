@@ -1,6 +1,7 @@
 // @import "cssreset";
 @import "foundationsettings";
 @import "foundation";
+// @import "typography";
 
 
 /*  ==================================================
@@ -12,10 +13,12 @@ $fontBold: 700;
 $fontReg: 400;
 $fontLight: 300;
 
-$primaryColor: #4aa9db; /* Cyan blue */
-$secondaryColor: #09064d; /* Dark blue */
+$primaryColor: #414042; /* Dark gray */
+$secondaryColor: #a7C9b5; /* Mint green */
 $primaryTextColor: #414042; /* Dark gray */
 $secondaryTextColor: #979797; /* Med gray */
+$borrowerColor: #ffe5b9; /* Soft Yellow */
+$investorColor: #e8997f; /* Soft Orange */
 $fieldColor: #f7f7f7; /* Light gray */
 $successColor: #6ac20a; /* Bright green */
 $errorColor: #d0021b; /* Bright red */
@@ -46,7 +49,7 @@ h3 {
 
 label {
     font-weight: $fontLight;
-    color: $secondaryColor;
+    color: $primaryColor;
 }
 
 
@@ -56,21 +59,28 @@ label {
     ==================================================  */
 
 .colorBox {
-    padding: 1rem;
-    margin: 0.5rem;
-    color: $white;
+    padding: 1.5rem 0.5rem;
+    margin: 1.1rem 0 0 0;
+    color: $black;
+    overflow: hidden;
+    word-wrap: break-word;
 }
 
 .primaryColor {
     background: $primaryColor;
+    color: $white;
 }
 
 .secondaryColor {
     background: $secondaryColor;
 }
 
-.primaryTextColor {
-    background: $primaryTextColor;
+.borrowerColor {
+    background: $borrowerColor;
+}
+
+.investorColor {
+    background: $investorColor;
 }
 
 .secondaryTextColor {
@@ -101,7 +111,7 @@ select, input[type="text"], .prefix  {
     outline: none;
     border: none;
     box-shadow: none;
-    color: $primaryTextColor;
+    color: $primaryColor;
 }
 
 select, input[type="text"], .prefix {
@@ -109,7 +119,7 @@ select, input[type="text"], .prefix {
 }
 
 select {
-    border: 1px solid $secondaryColor;
+    border: 1px solid $primaryColor;
     background: url("../img/arrow_down_dkblue.svg") no-repeat 97.5% 50% $fieldColor;
     background-size: 1.25rem auto;
 }
@@ -145,7 +155,7 @@ span.custom.radio {
     margin-right: 0.5rem;
 
     &.on {
-        background: $secondaryColor;
+        background: $primaryColor;
     }
 }
 
@@ -300,7 +310,7 @@ Needs to be corrected to not use inline-flex (not supported in Safari)
 
 .link {
     text-decoration: underline;
-    color: $secondaryColor;
+    color: $primaryColor;
 
         &:hover,
         &:focus,
@@ -361,12 +371,21 @@ body {
     color: $white;
 }
 
-.sectionTitle {
+.sectionTitle a {
     font-weight: bold;
     text-transform: uppercase;
-    color: $secondaryTextColor;
+    color: $primaryColor;
 }
 
 .contrastBg {
     background: $primaryColor;
+}
+
+.panel.callout {
+    background: $fieldColor;
+    border: 1px solid $primaryColor;
+
+    & a:not(.button) {
+        color: $primaryColor;
+    }
 }
